@@ -250,6 +250,15 @@ text-align: left;
     .navbar {
       background-color: #1F2022;
       border: none;
+      .nav {
+        color: white;
+      }
     }
   }
+}
+
+.nav {
+  color: black;
+  font-size: 17px;
+  text-decoration: none;
 }
