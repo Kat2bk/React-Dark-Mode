@@ -1,6 +1,5 @@
 import React from 'react';
 import useDarkMode from "../hooks/useDarkMode";
-import StatusUpdates from "./StatusUpdates";
 import {NavLink} from "react-router-dom";
 
 const Navbar = () => {

@@ -4,7 +4,8 @@ import axios from "axios";
 
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
-import {BrowserRouter as Router} from "react-router-dom";
+import StatusUpdates from "./components/StatusUpdates";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import "./styles.scss";
 
@@ -23,7 +24,14 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
+      <Switch>
+      <Route exact path="/">
       <Charts coinData={coinData} />
+      </Route>
+      <Route exact path="/updates">
+      <StatusUpdates />
+      </Route>
+      </Switch>
     </div>
   );
 };
