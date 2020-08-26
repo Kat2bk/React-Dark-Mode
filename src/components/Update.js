@@ -1,12 +1,15 @@
 import React from "react";
 
-const Update = (props) => {
-    console.log("props from update", props)
+const Update = props => {
     return (
         <div>
-        <h2>{props.description}</h2>
+        <h1>{props.user}</h1>
+        <h2>{props.usertitle}</h2>
+        <p>{props.description}</p>
+        <p>{props.project.name}</p>
         </div>
     )
+    
 }
 
 export default Update;

@@ -6,9 +6,11 @@ const StatusUpdates = () => {
     const [updates, setUpdates] = useState([]);
 
     useEffect(() => {
+
         axios.get("https://api.coingecko.com/api/v3/status_updates/")
         .then(response => {
-            setUpdates(response.data)
+            setUpdates(response.data.status_updates)
+            console.log("response from api", response.data.status_updates)
         })
         .catch(error => {
             console.log("Unable to get data", error)
@@ -17,7 +19,9 @@ const StatusUpdates = () => {
 
     return (
         <div>
-        {Object.values(updates).map(update => (
+        {updates.map(update => {
+            console.log("items from array", update)
+            return (
             <Update
             key={Date.now()} 
             description={update.description}
@@ -25,7 +29,8 @@ const StatusUpdates = () => {
             usertitle={update.user_title}
             project={update.project}
             />
-        ))}
+            )
+            })}
         </div>
     )
 }
